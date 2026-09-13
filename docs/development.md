@@ -14,7 +14,7 @@ uv sync
 ## Run locally
 
 ```bash
-uv run fastapi dev main.py
+uv run fastapi dev
 ```
 
 The server is available at `http://127.0.0.1:8000` and its interactive API documentation is at `/docs`.
@@ -31,5 +31,5 @@ docker run -p 8000:8000 seriousdb
 Format Python files with Black:
 
 ```bash
-uv tool run black main.py
+uv tool run black src
 ```

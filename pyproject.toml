@@ -8,3 +8,16 @@ dependencies = [
     "black>=26.5.1",
     "fastapi[standard]>=0.141.1",
 ]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+packages = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.fastapi]
+entrypoint = "seriousdb.main:app"

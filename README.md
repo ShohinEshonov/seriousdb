@@ -13,7 +13,7 @@ Clone the repository, install the project, and start the development server:
 git clone https://github.com/danieldeer/seriousdb.git
 cd seriousdb
 uv sync
-uv run fastapi dev main.py
+uv run fastapi dev
 ```
 
 The server is available at `http://127.0.0.1:8000`.

@@ -2,7 +2,7 @@
 
 The application is currently intentionally small:
 
-- `main.py` creates the FastAPI application and defines the HTTP routes.
+- `src/seriousdb/main.py` creates the FastAPI application and defines the HTTP routes.
 - The database is represented as a Python dictionary in memory while a request is handled.
 - The dictionary is loaded from and written to the local `.sdb` file.
 
