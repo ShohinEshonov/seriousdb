@@ -25,7 +25,7 @@ under `key`, overwriting any existing value. Returns the stored value. | | `dele
 `key` and return its previous value. Raises `ResourceNotFoundError` if the key does not exist. | |
 `exists(key)` | Return whether `key` exists. | | `get_all()` | Return a snapshot of every key-value
 pair. | | `get_bulk(keys)` | Return the values for multiple keys; missing keys are omitted. | |
-`count()` | Return the number of stored key-value pairs. |
+`count()` | Return the number of stored key-value pairs. | | `scan(prefix)` | Return a snapshot of all entries whose key starts with ``prefix``. |  
 
 ## Errors
 

@@ -74,6 +74,17 @@ def test_get_all_returns_all_key_value_pairs(db_file):
     }
 
 
+def test_scan_returns_only_prefixed_keys_only(db_file):
+    api.set("user:1", "Alice")
+
+    assert api.scan("user:") == {"user:1": "Alice"}
+
+
+def test_scan_blank_prefix_returns_all_key_value_pairs(db_file):
+    api.set("user:1", "Alice")
+    assert api.scan("") == {"user:1": "Alice"}
+
+
 def test_get_bulk_returns_existing_keys_only(db_file):
     api.set("name", "Daniel")
     api.set("language", "Python")

@@ -17,7 +17,7 @@ as its caller; there is no separate database process.
 1. On first use, the module loads the dictionary from `.sdb` automatically (or from wherever
    `seriousdb.api.load(path)` was pointed).
 1. `set` and `delete` update the in-memory dictionary and immediately flush it back to `.sdb`;
-   `get`, `exists`, `get_all`, `get_bulk` and `count` read the in-memory dictionary directly.
+   `get`, `exists`, `get_all`, `get_bulk`, `count` and `scan` read the in-memory dictionary directly.
 1. The function returns the requested value, or raises an exception (see [Errors](api.md#errors)) if
    it can't be fulfilled.
 

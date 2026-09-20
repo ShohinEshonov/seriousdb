@@ -191,6 +191,33 @@ def get_all() -> dict[str, str]:
         return require_db(cache).copy()
 
 
+def scan(prefix: str):
+    """Return a snapshot of all entries whose key starts with ``prefix``.
+
+    The database file is loaded automatically on first use. An empty prefix matches every key.
+
+    Parameters
+    ----------
+    prefix : str
+        Key prefix to match.
+
+    Returns
+    -------
+    dict of str to str
+        Matching key-value pairs.
+
+    Raises
+    ------
+    OSError
+        If the database file cannont be loaded.
+    """
+    _ensure_loaded()
+    with cache.lock:
+        all = require_db(cache)
+        data = {key: value for key, value in all.items() if key.startswith(prefix)}
+    return data
+
+
 def get_bulk(keys: Iterable[str]) -> dict[str, str]:
     """Return the values stored under multiple keys.
 
